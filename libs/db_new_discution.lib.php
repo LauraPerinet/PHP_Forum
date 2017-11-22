@@ -17,8 +17,7 @@ try{
 		'subject'=>$_POST['subject'],
 		'theme'=>$theme,
 		'text'=>$_POST['text'],
-		'date'=>date('j/m/Y - h:M:s'),
-		'answers'=>array(),
+		'date'=>date('j/m/Y - G:i:s'),
 		'level'=>1
 	);
 	$collection ->insert($discution);
