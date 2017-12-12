@@ -1,6 +1,5 @@
-<?if(isset($_GET['answer']) && $_GET['answer']===$code){?>
-<?echo 'get ='.$_GET['answer'].' et code ='.$code;?>
-<form method="post" action="libs/db_new_answer.lib.php?id=<?echo $id;?>&level=<?echo $code;?>">
+<?if(isset($_GET['answer']) && $_GET['answer']==$comment['_id']){?>
+<form id="comment" method="post" action="libs/db_new_answer.lib.php?id=<?echo $_GET['id'];?>&answer=<?echo $comment['_id'];?>">
 	<label for="text">Développez votre sujet</label>
 	<textarea id="text" name="text" required></textarea>
 	<label for="signature">Votre nom :</label>

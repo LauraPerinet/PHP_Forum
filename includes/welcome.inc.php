@@ -1,1 +1,1 @@
-<h1>Bienvenue sur le forum !</h1>
+<h2>Bienvenue sur le forum !</h2>

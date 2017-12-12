@@ -1,18 +1,16 @@
 <?php
 try{
-	
 	//Connexion database
 	$conn=new Mongo('localhost');
 
 	// connexion à la bdd
 	$bdd=$conn -> Forum;
-	$collection = $bdd ->Discutions;
+	$collection = $bdd ->Themes;
+
+	$theme = $collection->findOne(array('_id' => new MongoId($_GET['theme'])));
 	
-	
-	$cursor = $collection->find($req);
-	$num_doc=$cursor->count();
-	
-	
+
+	$conn->close();
 
 }
 catch(MongoConnectionException $e){

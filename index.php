@@ -6,33 +6,39 @@ require_once('libs/db_list_themes.lib.php');
 <head>
 	<meta charset="utf-8">
 	<title>Forum</title>
-	<link href="css/styles.css" rel="text/css"/>
+	<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Lobster" rel="stylesheet"> 
+	<link href="css/styles.css" type="text/css" rel="stylesheet"/>
+	<script>
+		function margeComments(id){
+			var e=document.getElementById(id);
+			var level=Number(e.getAttribute('datalevel'));
+			e.style.marginLeft=50*level+"px";
+		}
+	</script>
 </head>
 <body>
 <div id="global">
 	<header>
-		<h1>Un forum pour se mettre en jambe</h1>
-		<!--<div id="log">
-			<p>Nouvel utilisateur</p>
-			<p><a href="connexion.php">Se déconnecter</a></p>
-		</div>-->
-	</header>
-	<div id="menu_sujets">
-		<h2></h2>
-		<form method="post" action="libs/actions_distribution.lib.php?action=search">
-		<p>Quelle thématique vous interesse :
-			<select name="theme">
-				<?
-				foreach($themes as $theme){?>
-					<option value="<?echo $theme['_id'];?>"><?echo $theme['nom'];?></option>
-				<?}?>
-	
-			</select>
-			<input type="submit" value="Go"/>
+		<h1>Super Forum</h1>
+		<div id="menu_sujets">
+			<form method="post" action="libs/actions_distribution.lib.php?action=search">
+				<p>Quelle thématique vous interesse :
+					<select name="theme">
+						<option value="all">Tous les sujets</option>
+						<?
+						foreach($themes as $theme){?>
+							<option value="<?echo $theme['_id'];?>" <?if(isset($_GET['theme']) && (String)$theme['_id']==$_GET['theme']) echo 'selected="selected"';?>><?echo $theme['nom'];?></option>
+						<?}?>
+			
+					</select>
+					<input type="submit" value="Go"/>
+				</p>
 			</form>
-		</p>
-		<p><a href="index.php?action=new_discution">Créer un nouveau sujet</a></p>
-	</div>
+		
+			<p><a href="index.php?action=new_discution">Créer un nouveau sujet</a></p>
+		</div>
+	</header>
+	
 	<div id="content">
 		<?require_once('libs/actions_distribution.lib.php')?>
 	</div>

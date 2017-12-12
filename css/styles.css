@@ -1,0 +1,75 @@
+*{border:none; margin:0; padding:0;}
+#global{
+	width:80%;
+	max-width:1280px;
+	margin:0 auto;
+	font-family: 'Fira Sans', sans-serif;
+}
+a{
+	color:#579EBC;
+}
+header, #content{
+	border-radius:10px;
+	margin:10px 0;
+
+	padding:20px;
+}
+header{
+	background-color:#ddd;
+	display:flex;
+	justify-content:space-between;
+}
+h1{
+	font-family: 'Lobster', cursive;
+	color:#579EBC;
+}
+h2{
+	margin-bottom:20px;
+}
+#menu_sujets{
+	text-align:right;
+}
+.discution{
+	background-color:#ddd;
+	padding:10px;
+	margin:10px;
+}
+.infoSujet{
+	font-size:0.8em;
+}
+.infoSujet span{
+	color:#579EBC;
+}
+.discution:hover{
+	background-color:#ccc;
+}
+.sujet .entete{
+	background-color:#ddd;
+}
+.comment, .sujet{
+	margin:5px 0;
+	border:1px solid #ddd;
+}
+.entete, .text, .repondre{
+	padding:5px 10px;
+}
+.repondre{
+	font-size:0.8em;
+	text-align:right;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

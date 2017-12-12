@@ -9,18 +9,17 @@ try{
 	
 	
 	$discutions = [];
-	
-	$cursor=$collection->find();
+	if($_GET['theme']=="all"){
+		$req=array('level' => "1");
+	}else{
+		$req=array('theme._id' => new MongoId($_GET['theme']));
+	}
+	$cursor=$collection->find($req);
 	$num_doc=$cursor->count();
 	
 	if($num_doc>0){
 		foreach($cursor as $discution){
-			
-			if($discution['theme']['_id']==$_GET['theme'] && $discution['level']==1){
-				array_push($discutions, $discution);
-			}
-			
-			
+			array_push($discutions, $discution);
 		}
 	}
 	$conn->close();
